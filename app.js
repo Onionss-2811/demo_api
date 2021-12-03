@@ -11,6 +11,9 @@ mongoose.connect("mongodb://localhost/nodejs_day16")
 
 
 const employeeRouter = require('./routes/employee.route');
+const customerRouter = require('./routes/customer.route');
+const userRouter = require('./routes/user.route');
+const logRouter = require('./routes/log.route');
 
 const app = express(); 
 
@@ -30,6 +33,9 @@ app.get('/', (req, res, next) => {
 })
 
 app.use(employeeRouter);
+app.use(customerRouter);
+app.use(userRouter);
+app.use(logRouter);
 
 // Catch 404 Errors and forward them to error handler
 
